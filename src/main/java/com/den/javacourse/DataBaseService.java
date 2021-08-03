@@ -1,9 +1,6 @@
 package com.den.javacourse;
 
-
 public interface DataBaseService {
-
-    void saveToDataBase(int id, String name);
-    void getDateFromBase();
-
+    void saveUser(int id, String name);
+    void getIdUser();
 }

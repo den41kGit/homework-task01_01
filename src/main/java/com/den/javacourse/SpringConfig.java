@@ -9,17 +9,22 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan("com.den.javacourse")
 @PropertySource("classpath:file.properties")
 public class SpringConfig {
-
     @Bean
-    public InputData input(){
-        return new InputData(checkInputDate());
+    public InputFacadeService inputFacadeService(){
+        return new InputFacadeImpl(inputService(), checkInputService(), dataBaseService());
     }
     @Bean
-    public CheckInputDate checkInputDate(){
-        return new CheckInputDate(dataBaseService());
+    public InputService inputService(){
+        return new InputUserName();
+    }
+    @Bean
+    public CheckInputService checkInputService(){
+        return new CheckInput();
     }
     @Bean
     public DataBaseService dataBaseService(){
-        return new SimpleDataBase();
+        return new DefaultDataBase();
     }
+
+
 }

@@ -1,20 +1,17 @@
 package com.den.javacourse;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class OrderDataBase implements DataBaseService{
-    private static Set usersSet = new TreeSet();
-
+    private static Set usersSet = new LinkedHashSet();
     @Override
-    public void saveToDataBase(int id, String name) {
+    public void saveUser(int id, String name) {
         User user = new User(id, name);
         usersSet.add(user);
     }
-
     @Override
-    public void getDateFromBase() {
+    public void getIdUser() {
 
     }
 }
