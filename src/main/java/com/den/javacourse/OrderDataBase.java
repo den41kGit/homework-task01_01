@@ -11,7 +11,7 @@ public class OrderDataBase implements DataBaseService{
         usersSet.add(user);
     }
     @Override
-    public void getIdUser() {
-
+    public Set getUsersSet() {
+        return usersSet;
     }
 }

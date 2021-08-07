@@ -13,6 +13,7 @@ public class DefaultDataBase implements DataBaseService{
      }
 
     @Override
-    public void getIdUser() {
+    public Set getUsersSet() {
+        return usersSet;
     }
 }

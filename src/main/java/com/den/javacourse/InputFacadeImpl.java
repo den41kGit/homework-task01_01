@@ -4,19 +4,17 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class InputFacadeImpl implements InputFacadeService{
-    private final InputService inputService;
+    private final InputService inputUserName;
     private final CheckInputService checkInputService;
+    private final ProcessingService processingService;
     private final DataBaseService dataBaseService;
     @Override
     public void inputProcess() {
-        String name = inputService.inputProcessing();
-        while (!checkInputService.checkUserName(name)){
-            name = inputService.inputProcessing();
+        String inputIdWithName = inputUserName.inputProcessing();
+        while (!checkInputService.checkUserName(inputIdWithName)){
+            inputIdWithName = inputUserName.inputProcessing();
         }
-            String[] words = name.split(",");
-            words[0] = words[0].trim();
-            words[1] = words[1].trim();
-
-            dataBaseService.saveUser(Integer.parseInt(words[0]), words[1]);
+            String processeUsername[] = processingService.processing(inputIdWithName);
+            dataBaseService.saveUser(Integer.parseInt(processeUsername[0]), processeUsername[1]);
     }
 }

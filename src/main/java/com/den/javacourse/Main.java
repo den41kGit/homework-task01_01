@@ -8,7 +8,10 @@ public class Main {
                 SpringConfig.class
         );
 
-        InputFacadeService input = context.getBean("inputFacadeService", InputFacadeService.class);
-        input.inputProcess();
+        ApplicationLaunchFacadeService start = context.getBean(
+                "applicationLaunchFacadeService", ApplicationLaunchImpl.class
+        );
+        start.startApp();
+
     }
 }
