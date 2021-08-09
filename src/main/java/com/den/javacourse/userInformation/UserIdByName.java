@@ -1,14 +1,14 @@
-package com.den.javacourse;
+package com.den.javacourse.userInformation;
 
+import com.den.javacourse.dataBase.DataBaseService;
 import lombok.AllArgsConstructor;
 
 import java.util.Set;
 
 @AllArgsConstructor
-public class GetUserIdByName implements UserInformationService{
+public class UserIdByName implements UserInformationService{
     private final DataBaseService dataBaseService;
-    @Override
-    public void getInfo(String name) {
+    public void displayInfo(String name) {
         Set<User> userStream = dataBaseService.getUsersSet();
         userStream.stream().
                 filter(s -> s.getName().equals(name)).

@@ -1,4 +1,4 @@
-package com.den.javacourse;
+package com.den.javacourse.classFacade;
 
 public interface ApplicationLaunchFacadeService {
     void startApp();

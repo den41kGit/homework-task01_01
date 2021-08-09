@@ -1,4 +1,4 @@
-package com.den.javacourse;
+package com.den.javacourse.request;
 
 import java.io.BufferedReader;
 import java.io.IOException;

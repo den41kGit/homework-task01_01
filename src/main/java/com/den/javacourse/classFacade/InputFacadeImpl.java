@@ -1,5 +1,9 @@
-package com.den.javacourse;
+package com.den.javacourse.classFacade;
 
+import com.den.javacourse.check.CheckInputService;
+import com.den.javacourse.dataBase.DataBaseService;
+import com.den.javacourse.input.InputService;
+import com.den.javacourse.processing.ProcessingService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

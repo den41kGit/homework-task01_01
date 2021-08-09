@@ -1,10 +1,12 @@
-package com.den.javacourse;
+package com.den.javacourse.dataBase;
+
+import com.den.javacourse.userInformation.User;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class DefaultDataBase implements DataBaseService{
-    private static Set usersSet = new HashSet();
+    private static Set <User> usersSet = new HashSet();
 
     @Override
     public void saveUser(int id, String name) {
@@ -13,7 +15,7 @@ public class DefaultDataBase implements DataBaseService{
      }
 
     @Override
-    public Set getUsersSet() {
+    public Set <User> getUsersSet() {
         return usersSet;
     }
 }

@@ -1,4 +1,4 @@
-package com.den.javacourse;
+package com.den.javacourse.input;
 
 public interface InputService {
     String inputProcessing();

@@ -1,4 +1,4 @@
-package com.den.javacourse;
+package com.den.javacourse.processing;
 
 public class UserProcessingForDataBase implements ProcessingService{
 

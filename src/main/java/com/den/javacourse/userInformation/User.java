@@ -1,11 +1,9 @@
-package com.den.javacourse;
+package com.den.javacourse.userInformation;
 
 import lombok.*;
 import org.springframework.stereotype.Component;
 
-@Component
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
