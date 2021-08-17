@@ -1,5 +1,5 @@
 package com.den.javacourseV2.facades;
 
-public interface ApplicationLaunchFacade {
+public interface AppWorkFacade {
     void startApp();
 }

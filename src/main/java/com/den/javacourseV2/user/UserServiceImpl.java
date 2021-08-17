@@ -2,19 +2,20 @@ package com.den.javacourseV2.user;
 
 
 import com.den.javacourseV2.dataBase.DataBase;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
 @RequiredArgsConstructor
-@AllArgsConstructor
-
-public class UserImpl implements UserService{
+@Component
+public class UserServiceImpl implements UserService{
     @Value("${max_name_length}")
     private int maxNameLength;
-    private final DataBase dataBase;
+    @Autowired
+    private DataBase dataBase;
 
     @Override
     public boolean checkName(String inputStr) {

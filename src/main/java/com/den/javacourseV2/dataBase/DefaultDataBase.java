@@ -1,18 +1,20 @@
 package com.den.javacourseV2.dataBase;
 
+import com.den.javacourseV2.user.User;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class DefaultDataBase<E> implements DataBase<E>{
-    private static final Set usersSet = new HashSet();
+public class DefaultDataBase implements DataBase<User>{
+    private static final Set<User> usersSet = new HashSet();
 
     @Override
-    public void save(E element) {
+    public void save(User element) {
         usersSet.add(element);
     }
 
     @Override
-    public Set<E> select() {
+    public Set<User> select() {
         return usersSet;
     }
 }
