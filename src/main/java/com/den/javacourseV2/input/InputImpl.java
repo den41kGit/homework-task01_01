@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 @Component
 public class InputImpl implements InputService{
     @Override
-    public String inputUserName() {
+    public String inputUserData() {
         BufferedReader readerRequest = new BufferedReader(new InputStreamReader(System.in));
         String username = null;
         try {

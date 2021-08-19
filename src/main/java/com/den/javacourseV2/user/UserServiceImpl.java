@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService{
     @Value("${max_name_length}")
     private int maxNameLength;
     @Autowired
-    private DataBase dataBase;
+    private DataBase<User> dataBase;
 
     @Override
     public boolean checkName(String inputStr) {
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public String[] processingForDataBase(String stringToProcess) {
+    public String[] parseUser(String stringToProcess) {
         String[] idWithName = stringToProcess.split(",");
         idWithName[0] = idWithName[0].trim();
         idWithName[1] = idWithName[1].trim();
@@ -59,5 +59,10 @@ public class UserServiceImpl implements UserService{
                 filter(s -> s.getName().equals(name)).
                 map(User::getId).
                 forEach(System.out::println);
+    }
+
+    @Override
+    public void saveUser(User user) {
+        dataBase.save(user);
     }
 }

@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 @Component
 public class OutputServiceImpl implements OutputService{
     @Override
-    public boolean checkForOutput() {
+    public boolean checkForOutputInfo() {
         BufferedReader readerRequest = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Do you want to get a user ID with a specific name?" +
                 " Enter \"yes\" or \"no\"");
@@ -26,9 +26,6 @@ public class OutputServiceImpl implements OutputService{
                 e.printStackTrace();
             }
         }
-        if (yesOrNo.equals("yes")) {
-            return true;
-        }
-        return  false;
+        return yesOrNo.equals("yes");
     }
 }

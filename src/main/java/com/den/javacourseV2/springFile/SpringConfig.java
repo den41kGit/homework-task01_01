@@ -14,11 +14,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:file.properties")
 public class SpringConfig {
     @Bean
-    public AppWorkFacade applicationLaunchFacade(){
+    public AppWorkFacade appWorkFacade(){
         return new AppWorkFacadeImpl();
-    }
-    @Bean
-    public DataBase<User> dataBase(){
-        return new DefaultDataBase();
     }
 }
